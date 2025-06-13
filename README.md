@@ -2,7 +2,7 @@
 
 Welcome to the source code of my personal developer portfolio site — built with pure HTML, CSS, and JavaScript. It's designed to be sleek, responsive, and interactive (with particle backgrounds and typing effects 🤖).
 
-🚀 Live Site: [harshithreddy.github.io](https://harshith-reddy-py.github.io)
+🚀 Live Site: [harshith-reddy-py.github.io](https://harshith-reddy-py.github.io)
 
 ---
 
