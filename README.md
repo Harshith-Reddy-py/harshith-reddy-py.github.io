@@ -48,4 +48,4 @@ Feel free to connect with me:
 ```bash
 git clone https://github.com/Harshith-Reddy-py/harshithreddy.github.io.git
 cd harshithreddy.github.io
-open index.html  # or just use Live Server if you're in VSCode
+open index.html  # or use Live Server if you're in VSCode
