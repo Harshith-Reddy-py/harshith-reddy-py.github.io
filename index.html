@@ -15,6 +15,27 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <style>
+    .nova-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.9rem 2rem;
+  background: var(--glass);
+  color: var(--primary);
+  border: 1px solid rgba(56, 189, 248, 0.3);
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  backdrop-filter: blur(5px);
+  transition: var(--transition);
+}
+
+.nova-link:hover {
+  background: rgba(56, 189, 248, 0.15);
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 10px 20px rgba(56, 189, 248, 0.3);
+}
+
     :root {
       --primary: #38bdf8;
       --primary-dark: #0ea5e9;
@@ -362,7 +383,13 @@
         </a>
       </div>
     </section>
-    
+     <!-- Speak to Nova Button -->
+<div style="text-align: center; margin-top: 4rem;">
+  <a href="https://harshith-reddy-py.github.io/nova/" target="_blank" class="nova-link">
+    🤖 Speak to Nova
+  </a>
+</div>
+
     <footer>
       <p>© <span id="year"></span> Harshith Reddy. All rights reserved.</p>
       <p>Made with <i class="fas fa-heart" style="color: #f43f5e;"></i> and <i class="fas fa-code" style="color: var(--primary);"></i></p>
