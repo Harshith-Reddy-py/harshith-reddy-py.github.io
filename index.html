@@ -3,39 +3,22 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Harshith Reddy - Programmer | Tech Enthusiast | Problem Solver | Portfolio">
-  <meta name="keywords" content="Harshith Reddy, portfolio, programmer, developer, Python, JavaScript">
+  <meta name="description" content="Harshith Reddy - Full Stack Developer | Python Programmer | Tech Enthusiast | Portfolio">
+  <meta name="keywords" content="Harshith Reddy, portfolio, programmer, developer, Python, JavaScript, React, Node.js, portfolio website">
   <meta name="author" content="Harshith Reddy">
-  <meta property="og:title" content="Harshith Reddy | Portfolio">
-  <meta property="og:description" content="Passionate programmer building cool stuff and solving real-world problems.">
+  <meta property="og:title" content="Harshith Reddy | Full Stack Developer">
+  <meta property="og:description" content=" Passionate programmer building innovative solutions and solving real-world problems.">
   <meta property="og:type" content="website">
-  <title>Harshith Reddy | Portfolio</title>
+  <meta property="og:image" content="https://harshith-reddy-py.github.io/portfolio/og-image.png">
+  <meta property="og:url" content="https://harshith-reddy-py.github.io/portfolio">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:creator" content="@harshith_293">
+  <title>Harshith Reddy | Full Stack Developer</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <style>
-    .nova-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.9rem 2rem;
-  background: var(--glass);
-  color: var(--primary);
-  border: 1px solid rgba(56, 189, 248, 0.3);
-  border-radius: 50px;
-  text-decoration: none;
-  font-weight: 600;
-  backdrop-filter: blur(5px);
-  transition: var(--transition);
-}
-
-.nova-link:hover {
-  background: rgba(56, 189, 248, 0.15);
-  transform: translateY(-2px) scale(1.03);
-  box-shadow: 0 10px 20px rgba(56, 189, 248, 0.3);
-}
-
     :root {
       --primary: #38bdf8;
       --primary-dark: #0ea5e9;
@@ -83,10 +66,76 @@
       z-index: 1;
     }
     
+    /* Navigation */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 100;
+      padding: 1.5rem 2rem;
+      backdrop-filter: blur(10px);
+      background: var(--glass);
+      border-bottom: 1px solid rgba(56, 189, 248, 0.1);
+    }
+    
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 700;
+      font-family: 'Space Grotesk', sans-serif;
+      background: linear-gradient(to right, var(--primary), #7dd3fc);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      text-decoration: none;
+    }
+    
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+    }
+    
+    .nav-links a {
+      color: var(--light);
+      text-decoration: none;
+      font-weight: 600;
+      position: relative;
+      padding: 0.5rem 0;
+      transition: var(--transition);
+    }
+    
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--primary);
+      transition: var(--transition);
+    }
+    
+    .nav-links a:hover::after,
+    .nav-links a.active::after {
+      width: 100%;
+    }
+    
+    .nav-links a:hover {
+      color: var(--primary);
+    }
+    
     /* Header & Typed Animation */
     header {
       text-align: center;
-      margin: 4rem 0;
+      margin: 8rem 0 4rem;
       position: relative;
       overflow: hidden;
     }
@@ -133,7 +182,7 @@
     /* Sections */
     section {
       margin: 4rem 0;
-      padding: 2rem;
+      padding: 2.5rem;
       background: var(--glass);
       backdrop-filter: blur(12px);
       border-radius: 20px;
@@ -162,6 +211,121 @@
       line-height: 1.8;
       max-width: 800px;
       margin: 0 auto;
+    }
+    
+    /* Skills Section */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+    
+    .skill-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 1.5rem 1rem;
+      background: rgba(15, 23, 42, 0.5);
+      border-radius: 12px;
+      border: 1px solid rgba(56, 189, 248, 0.15);
+      transition: var(--transition);
+      cursor: default;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .skill-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: var(--primary);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: var(--transition);
+    }
+    
+    .skill-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(56, 189, 248, 0.2);
+      background: rgba(15, 23, 42, 0.7);
+    }
+    
+    .skill-card:hover::before {
+      transform: scaleX(1);
+    }
+    
+    .skill-icon {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      transition: var(--transition);
+    }
+    
+    .skill-card:hover .skill-icon {
+      transform: scale(1.2);
+    }
+    
+    .skill-name {
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+    
+    .skill-bar {
+      width: 100%;
+      height: 6px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 3px;
+      overflow: hidden;
+      margin-top: 0.5rem;
+    }
+    
+    .skill-progress {
+      height: 100%;
+      background: var(--primary);
+      border-radius: 3px;
+      transition: width 1s ease-out;
+      width: 0;
+    }
+    
+    /* Proficiency Bars */
+    .proficiency-container {
+      margin-top: 3rem;
+    }
+    
+    .proficiency-item {
+      margin-bottom: 1.5rem;
+    }
+    
+    .proficiency-header {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 0.5rem;
+    }
+    
+    .proficiency-title {
+      font-weight: 600;
+    }
+    
+    .proficiency-value {
+      color: var(--primary);
+    }
+    
+    .proficiency-bar {
+      height: 10px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 5px;
+      overflow: hidden;
+    }
+    
+    .progression {
+      height: 100%;
+      background: var(--primary);
+      border-radius: 5px;
+      transition: width 1s ease-out;
+      width: 0;
     }
     
     /* Contact Section */
@@ -243,6 +407,29 @@
       font-size: 1.25rem;
     }
     
+    /* Speak to Nova Button */
+    .nova-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.9rem 2rem;
+      background: var(--glass);
+      color: var(--primary);
+      border: 1px solid rgba(56, 189, 248, 0.3);
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 600;
+      backdrop-filter: blur(5px);
+      transition: var(--transition);
+      margin: 2rem auto;
+    }
+    
+    .nova-link:hover {
+      background: rgba(56, 189, 248, 0.15);
+      transform: translateY(-2px) scale(1.03);
+      box-shadow: 0 10px 20px rgba(56, 189, 248, 0.3);
+    }
+    
     /* Footer */
     footer {
       text-align: center;
@@ -321,9 +508,25 @@
         padding: 0 1rem;
       }
       
+      nav {
+        padding: 1rem;
+      }
+      
+      .nav-links {
+        display: none;
+      }
+      
+      header {
+        margin-top: 6rem;
+      }
+      
       section {
         padding: 1.5rem;
         margin: 2rem 0;
+      }
+      
+      .skills-grid {
+        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
       }
       
       .social-links {
@@ -334,6 +537,13 @@
         width: 100%;
       }
     }
+    
+    /* Animations */
+    @keyframes float {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+      100% { transform: translateY(0px); }
+    }
   </style>
 </head>
 <body>
@@ -343,6 +553,18 @@
   
   <!-- Particles background -->
   <div id="tsparticles"></div>
+  
+  <!-- Navigation -->
+  <nav>
+    <div class="nav-container">
+      <a href="#" class="logo">Harshith Reddy</a>
+      <div class="nav-links">
+        <a href="#about" class="active">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </nav>
   
   <!-- Theme Toggle -->
   <div class="theme-toggle" id="themeToggle">
@@ -355,19 +577,150 @@
       <p id="typed-text"></p>
     </header>
 
-    <section class="about">
+    <section class="about" id="about">
       <h2><span class="emoji">🧑‍💻</span> About Me</h2>
-      <p>Hey! I'm Harshith, a passionate programmer who loves building cool stuff and solving real-world problems. I specialize in Python and web development, with experience in creating efficient, scalable solutions. I'm always learning new technologies and pushing my limits to create innovative applications.</p>
+      <p>Hey! I'm Harshith, a passionate Full Stack Developer who loves building innovative solutions and solving real-world problems. With expertise in Python and JavaScript ecosystems, I specialize in creating efficient, scalable applications. Continuously learning and adapting to new technologies, I push boundaries to deliver cutting-edge solutions that make an impact.</p>
+      <p>My approach combines technical excellence with creative problem-solving, ensuring that every project I undertake not only meets but exceeds expectations. When I'm not coding, you'll find me contributing to open-source projects, exploring new tech trends, or sharing knowledge with the developer community.</p>
     </section>
-      <!-- Speak to Nova Button -->
-<div style="text-align: center; margin-top: 4rem;">
-  <a href="https://harshith-reddy-py.github.io/nova/" target="_blank" class="nova-link">
-    🤖 Speak to Nova
-  </a>
-</div>
+    
+    <div style="text-align: center;">
+      <a href="https://harshith-reddy-py.github.io/nova/" target="_blank" class="nova-link">
+        🤖 Speak to Nova
+      </a>
+    </div>
 
-    <section class="contact">
+    <section class="skills" id="skills">
+      <h2><span class="emoji">🛠️</span> Skills & Technologies</h2>
+      
+      <div class="skills-grid">
+        <div class="skill-card">
+          <div class="skill-icon" style="color: #3776AB;">
+            <i class="fab fa-python"></i>
+          </div>
+          <div class="skill-name">Python</div>
+          <div class="skill-bar">
+            <div class="skill-progress" data-value="95"></div>
+          </div>
+        </div>
+        
+        <div class="skill-card">
+          <div class="skill-icon" style="color: #F0DB4F;">
+            <i class="fab fa-js"></i>
+          </div>
+          <div class="skill-name">JavaScript</div>
+          <div class="skill-bar">
+            <div class="skill-progress" data-value="90"></div>
+          </div>
+        </div>
+        
+        <div class="skill-card">
+          <div class="skill-icon" style="color: #61DAFB;">
+            <i class="fab fa-react"></i>
+          </div>
+          <div class="skill-name">React</div>
+          <div class="skill-bar">
+            <div class="skill-progress" data-value="85"></div>
+          </div>
+        </div>
+        
+        <div class="skill-card">
+          <div class="skill-icon" style="color: #339933;">
+            <i class="fab fa-node-js"></i>
+          </div>
+          <div class="skill-name">Node.js</div>
+          <div class="skill-bar">
+            <div class="skill-progress" data-value="88"></div>
+          </div>
+        </div>
+        
+        <div class="skill-card">
+          <div class="skill-icon" style="color: #E34F26;">
+            <i class="fab fa-html5"></i>
+          </div>
+          <div class="skill-name">HTML5</div>
+          <div class="skill-bar">
+            <div class="skill-progress" data-value="95"></div>
+          </div>
+        </div>
+        
+        <div class="skill-card">
+          <div class="skill-icon" style="color: #2965f1;">
+            <i class="fab fa-css3-alt"></i>
+          </div>
+          <div class="skill-name">CSS3</div>
+          <div class="skill-bar">
+            <div class="skill-progress" data-value="92"></div>
+          </div>
+        </div>
+        
+        <div class="skill-card">
+          <div class="skill-icon" style="color: #4479A1;">
+            <i class="fas fa-database"></i>
+          </div>
+          <div class="skill-name">SQL</div>
+          <div class="skill-bar">
+            <div class="skill-progress" data-value="85"></div>
+          </div>
+        </div>
+        
+        <div class="skill-card">
+          <div class="skill-icon" style="color: #F1502F;">
+            <i class="fab fa-git-alt"></i>
+          </div>
+          <div class="skill-name">Git</div>
+          <div class="skill-bar">
+            <div class="skill-progress" data-value="90"></div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="proficiency-container">
+        <div class="proficiency-item">
+          <div class="proficiency-header">
+            <div class="proficiency-title">Frontend Development</div>
+            <div class="proficiency-value">90%</div>
+          </div>
+          <div class="proficiency-bar">
+            <div class="progression" data-value="90"></div>
+          </div>
+        </div>
+        
+        <div class="proficiency-item">
+          <div class="proficiency-header">
+            <div class="proficiency-title">Backend Development</div>
+            <div class="proficiency-value">92%</div>
+          </div>
+          <div class="proficiency-bar">
+            <div class="progression" data-value="92"></div>
+          </div>
+        </div>
+        
+        <div class="proficiency-item">
+          <div class="proficiency-header">
+            <div class="proficiency-title">API Design</div>
+            <div class="proficiency-value">88%</div>
+          </div>
+          <div class="proficiency-bar">
+            <div class="progression" data-value="88"></div>
+          </div>
+        </div>
+        
+        <div class="proficiency-item">
+          <div class="proficiency-header">
+            <div class="proficiency-title">Problem Solving</div>
+            <div class="proficiency-value">95%</div>
+          </div>
+          <div class="proficiency-bar">
+            <div class="progression" data-value="95"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
       <h2><span class="emoji">📫</span> Let's Connect</h2>
+      <p>Feel free to reach out for collaborations, job opportunities, or just to say hello!</p>
+      
       <div class="social-links">
         <a href="https://github.com/Harshith-Reddy-py" target="_blank" rel="noopener noreferrer">
           <i class="fab fa-github"></i> GitHub
@@ -504,6 +857,21 @@
           if (entry.isIntersecting) {
             entry.target.style.opacity = 1;
             entry.target.style.transform = 'translateY(0)';
+            
+            // Animate skill bars when skills section comes into view
+            if (entry.target.id === 'skills') {
+              setTimeout(() => {
+                document.querySelectorAll('.skill-progress').forEach(bar => {
+                  const value = bar.getAttribute('data-value');
+                  bar.style.width = `${value}%`;
+                });
+                
+                document.querySelectorAll('.progression').forEach(bar => {
+                  const value = bar.getAttribute('data-value');
+                  bar.style.width = `${value}%`;
+                });
+              }, 300);
+            }
           }
         });
       }, { threshold: 0.1 });
@@ -513,6 +881,23 @@
         section.style.transform = 'translateY(20px)';
         section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
         observer.observe(section);
+      });
+      
+      // Smooth scrolling for navigation links
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+          
+          const targetId = this.getAttribute('href');
+          const targetElement = document.querySelector(targetId);
+          
+          if (targetElement) {
+            window.scrollTo({
+              top: targetElement.offsetTop - 80,
+              behavior: 'smooth'
+            });
+          }
+        });
       });
     });
   </script>
